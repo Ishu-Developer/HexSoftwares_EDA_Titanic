@@ -14,7 +14,7 @@ warnings.filterwarnings('ignore')
 # 1. Load Dataset 
 df = pd.read_csv('titanic.csv')
 print("=== Dataset Shape ===")
-print(df.shape)           # Kitne rows aur columns hain
+print(df.shape)           #rows&columns 
 print("=== First 5 Rows ===")
 print(df.head())
 print("=== Column Names ===")
@@ -29,11 +29,11 @@ print("=== Missing Values Percentage ===")
 missing_percent = (df.isnull().sum() / len(df)) * 100
 print(missing_percent[missing_percent > 0].round(2))
 # Handle Missing Values
-# Age column: mean se fill karo (average age)
+# Age column: mean -> average age
 df['Age'] = df['Age'].fillna(df['Age'].median())
-# Embarked column: most common value se fill karo
+# Embarked column: by most common value
 df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
-# Cabin column: bahut zyada missing hai, drop kar do
+# Cabin column: more missing, drop them
 df = df.drop(columns=['Cabin'])
 print("=== After Cleaning — Missing Values ===")
 print(df.isnull().sum())
@@ -97,9 +97,9 @@ axes[1,1].set_ylabel('Survival Rate')
 axes[1,1].yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
 axes[1,1].set_ylim(0, 1)
 
-# 5) Fare vs Survival (Boxplot with clipped outliers)
+# 5) Fare vs Survival 
 df_box = df.copy()
-upper = df_box['Fare'].quantile(0.98)      # top 2% cut
+upper = df_box['Fare'].quantile(0.98) 
 df_box['Fare_clipped'] = df_box['Fare'].clip(upper=upper)
 
 sns.violinplot(
