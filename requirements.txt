@@ -1,0 +1,4 @@
+pandas - Data loading, cleaning, analysis.
+numpy - Autoinstall when using Pandas.
+matplotlib - Basic charts.
+seaborn - Beautiful statistical graphs
