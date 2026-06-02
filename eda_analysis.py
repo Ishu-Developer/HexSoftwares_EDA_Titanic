@@ -1,5 +1,5 @@
 # ======================================
-# PROJECT 1: EDA on Titanic Dataset
+# Task 1: EDA on Titanic Dataset
 # @HexSoftwares Internship — Ishu
 # ======================================
 
